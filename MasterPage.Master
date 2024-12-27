@@ -1,0 +1,350 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="PCS_JIM_Web.MasterPage"  %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>
+		<%=this.ApplicationTitle() %> - <%=this.ApplicationLokasi() %>
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Pooled Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+    Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<link rel="shortcut icon" href="<%= ResolveUrl("images/logoIFD.gif") %>" type="image/x-icon "/>
+
+    <link href="<%= ResolveUrl("css/bootstrap.min.css") %>" rel='stylesheet' type='text/css' />
+    <link href="<%= ResolveUrl("css/style.css") %>" rel='stylesheet' type='text/css' />
+    <link href="<%= ResolveUrl("css/morris.css") %>" rel="stylesheet" type="text/css"/>
+    <link href="<%= ResolveUrl("css/font-awesome.css") %>" rel="stylesheet"> 
+    <link href="<%= ResolveUrl("css/icon-font.min.css") %>" rel="stylesheet" type='text/css' />
+	<script src="<%= ResolveUrl("js/jquery-2.1.4.min.js") %>"></script>
+	<script src="<%= ResolveUrl("js/jquery-ui.js") %>"></script>
+
+	<link rel="stylesheet" type="text/css" href="<%= ResolveUrl("css/jquery-ui.css") %>" />
+
+	<link rel="stylesheet" type="text/css" href="<%= ResolveUrl("css/table-style.css") %>" />
+	<link rel="stylesheet" type="text/css" href="<%= ResolveUrl("css/basictable.css") %>" />
+	<script type="text/javascript" src="<%= ResolveUrl("js/jquery.basictable.min.js") %>"></script>
+	<script type="text/javascript" src="<%= ResolveUrl("js/global.js") %>"></script>
+
+    <link href='//fonts.googleapis.com/css?family=Roboto:700,500,300,100italic,100,400' rel='stylesheet' type='text/css'/>
+    <link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+	 <style type="text/css">
+		.Initial
+	    {
+		    display: block;
+		    padding: 4px 18px 4px 18px;
+		    float: left;
+		    background-color: mistyrose;
+            background-image: url('../../images/tab3.png');
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            width: 180px;
+            height: 40px;
+		    color: Black;
+		    font-weight: bold;
+	    }
+	    .Initial:hover
+	    {
+		    color: darkblue;
+		    background-color: powderblue;
+            background-image: url('../../images/tab2.png');
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            width: 180px;
+            height: 40px;
+	    }
+	    .Clicked
+	    {
+            background-image: url('../../images/tab1.png');
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            width: 180px;
+            height: 40px;
+		    float: left;
+		    display: block;
+		    background-color: #1b93e1;
+		    padding: 4px 18px 4px 18px;
+		    color: Black;
+		    font-weight: bold;
+	    }
+    </style>
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+	<script language="javascript">
+		$(window).load(function () {
+            // Animate loader off screen
+            $(".se-pre-con").fadeOut("slow");;
+		});
+
+        setInterval(function () {
+            $("head title").html($("head title").html().substring(1) + $("head title").html().substring(0, 1));
+		}, 300);
+
+    </script>
+	<style type="text/css">
+    tr.GridPager td {
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+
+    tr.GridPager td table {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        width:auto;
+    }
+
+    .GridPager a, .GridPager span {
+        display:  block;
+        width: 40px;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        margin: 0;
+        padding: 0;
+        font-size:80%;
+    }
+
+    .GridPager a {
+        background-color: #f5f5f5;
+        color: #969696;
+        border: 1px solid #dddddd;
+        height: 20px;
+        font-size:80%;
+    }
+
+    .GridPager span {
+        background-color: #ccdef4;
+        color: #000;
+        border: 1px solid #969696;
+        height: 20px;
+    }
+    </style>
+</head>
+<body runat="server" id="bodymaster">
+	<div class="se-pre-con"></div>
+
+	<form id="formBody" runat="server">
+		<asp:ScriptManager ID="ScriptManager1" EnablePartialRendering="true" runat="server"></asp:ScriptManager>
+    <div class="page-container">
+   <!--/content-inner-->
+<div class="left-content">
+	   <div class="mother-grid-inner">
+              <!--header start here-->
+				<div class="header-main">
+							<div class="logo-w3-agile">								
+								<h1><a href="<%= ResolveUrl("default.aspx") %>"><%=this.ApplicationLokasi() %> 
+									
+								    </a></h1>
+							</div>
+							
+						<div class="profile_details w3l">		
+							<asp:UpdateProgress ID="UpdateProgress1" runat="server" >
+							<ProgressTemplate>
+								<!--
+									<div class="grid_3 grid_4 w3layouts">
+										<div class="progress">
+											<div class="progress-bar progress-bar-success" style="width: 80%"></div>
+										</div>
+									</div>
+								-->								
+							</ProgressTemplate>
+							</asp:UpdateProgress>
+								<ul>
+									<li class="dropdown profile_details_drop">
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+											<div class="profile_img">	
+												<span class="prfil-img">
+													<!--<img src="<%= ResolveUrl("images/in4.jpg") %>" alt="">-->
+													<asp:Image ID="imageprofile" runat="server" />
+												</span> 
+												<div class="user-name">
+													<p><%=this.UserName() %></p>
+													<span><%=this.UserFullName() %></span>
+												</div>
+												<i class="fa fa-angle-down"></i>
+												<i class="fa fa-angle-up"></i>
+												<div class="clearfix"></div>	
+											</div>	
+										</a>
+										<ul class="dropdown-menu drp-mnu">
+											<!--<li> <a href="#"><i class="fa fa-cog"></i> Settings</a> </li> --> 
+											<li> <a href='<%= ResolveUrl("Module/myprofile.aspx") %>'><i class="fa fa-user"></i> Profile</a> </li>
+											<li> <a href='<%= ResolveUrl("Module/signout.aspx") %>'><i class="fa fa-sign-out"></i> Logout</a> </li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+							
+				     <div class="clearfix"> </div>	
+				</div>
+				   		    
+		  
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+
+			<script>
+				$(document).ready(function () {
+					var navoffeset = $(".header-main").offset().top;
+					$(window).scroll(function () {
+						var scrollpos = $(window).scrollTop();
+						if (scrollpos >= navoffeset) {
+							$(".header-main").addClass("fixed");
+						} else {
+							$(".header-main").removeClass("fixed");
+						}
+					});
+
+				});
+			</script>
+					<!-- /script-for sticky-nav -->
+			<!--inner block start here-->
+			<div class="inner-block">
+
+			</div>
+			<!--inner block end here-->
+			<!--copy rights start here-->
+			<div class="copyrights">
+				 <p>© 2024 <%=this.ApplicationTitle() %></p>
+			</div>	
+
+	</div>
+</div>
+
+  <!--//content-inner-->
+		<!--/sidebar-menu-->
+				<div class="sidebar-menu">
+					<header class="logo1">
+						<a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a> 
+					</header>
+						<div style="border-top:1px ridge rgba(255, 255, 255, 0.15)"></div>
+                           <div class="menu">
+									<ul id="menu">
+										
+										<li><a href="<%= ResolveUrl("default.aspx") %>"><i class="fa fa-tachometer"></i> <span>Dashboard</span><div class="clearfix"></div></a></li>
+										
+							        <li><a href="#"><i class="fa fa-table"></i>  <span>Setup</span> <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>
+										 <ul>
+										 <% if(session.Usergroupid == "admin") {  %>
+											<li><a href="<%= ResolveUrl("Module/deviceid.aspx") %>">Device Id</a></li>
+											<li><a href="<%= ResolveUrl("Module/subdeviceid.aspx") %>">Sub Device Id</a></li>
+											<li><a href="<%= ResolveUrl("Module/outlet.aspx") %>">Outlet</a></li>
+										 <% }%>
+										 <% if(session.Usergroupid == "admin") {  %>
+											<li><a href="<%= ResolveUrl("Module/setuppaymenttype.aspx") %>">Payment Type</a></li>
+											<li><a href="<%= ResolveUrl("Module/setupfloor.aspx") %>">Floor</a></li>
+											<li><a href="<%= ResolveUrl("Module/setuproomtype.aspx") %>">Room Type</a></li>
+											<li><a href="<%= ResolveUrl("Module/setuproomamenities.aspx") %>">Room Amenities</a></li>
+											<li><a href="<%= ResolveUrl("Module/setupratestype.aspx") %>">Rate Type</a></li>
+											<li><a href="<%= ResolveUrl("Module/setuptax.aspx") %>">Tax</a></li>
+											<li><a href="<%= ResolveUrl("Module/setupseasontype.aspx") %>">Season Type</a></li>
+											<li><a href="<%= ResolveUrl("Module/setuproom.aspx") %>">Room Operation</a></li>
+											<li><a href="<%= ResolveUrl("Module/setuproomtariff.aspx") %>">Room Tariff</a></li>
+											<li><a href="<%= ResolveUrl("Module/setupbusource.aspx") %>">Booking Source</a></li>
+										<% }%>
+											<li><a href="<%= ResolveUrl("Module/setupguestlist.aspx") %>">Guest List</a></li>
+										<% if(session.Usergroupid == "admin") {  %>
+											<li><a href="<%= ResolveUrl("Module/setupcontroltype.aspx") %>">Control Room Type</a></li>
+										<% }%>
+										  </ul>
+									 </li>
+
+									
+									<li><a href="#"><i class="fa fa-check-square-o nav_icon"></i>  <span>Reservation</span> <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>
+										<ul>
+											<li><a onclick="<%= this.getopenURL("") %>">Walk in</a></li>
+											<li><a onclick="<%= this.getopenURL("reservation") %>">Reservation Room</a></li>
+											<li><a href="<%= ResolveUrl("Module/reservationlist.aspx") %>">Reservation List</a></li>
+											<li><a href="<%= ResolveUrl("Module/arrivallist.aspx") %>">Arrival List</a></li>
+											<li><a href="<%= ResolveUrl("Module/departurelist.aspx") %>">Departure List</a></li>
+										</ul>																				
+									 </li>
+
+									<!--<li><a href="<%= ResolveUrl("Module/selfcheckin.aspx") %>"><i class="fa fa-check-circle-o"></i> <span>Self Check in</span><div class="clearfix"></div></a></li>-->
+
+									<li><a href="#"><!--<i class="glyphicon glyphicon-bed"></i>-->  
+													<img src="<%= ResolveUrl("images/broom.png") %>">
+											<span>House Keeping</span> <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>
+										 <ul>
+											<li><a href="<%= ResolveUrl("Module/cleanroom.aspx") %>">Clean Room</a></li>
+											<li><a href="<%= ResolveUrl("Module/cleanroomlist.aspx") %>">Clean Room List</a></li>
+										  </ul>
+									 </li>
+
+									<li><a href="#"><i class="fa fa-wrench"></i>  <span>Maintenance</span> <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>
+										 <ul>
+											 <li><a href="<%= ResolveUrl("Module/repairroom.aspx") %>">Control Room</a></li>
+											 <li><a href="<%= ResolveUrl("Module/maintenanceroomlist.aspx") %>">Control Room List</a></li>
+										  </ul>
+									 </li>
+									<% if(session.Usergroupid != "STAFF") {  %>
+									<li><a href="#"><i class="fa fa-print"></i>  <span>Report</span> <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>
+										 <ul>
+											<li><a href="<%= ResolveUrl("Report/logdaily.aspx") %>">Log Daily</a></li>
+										<!--	<li><a href="<%= ResolveUrl("Report/transactionlist.aspx") %>">Transaction List</a></li>-->
+										<!--	<li><a href="<%= ResolveUrl("Report/roomlist.aspx") %>">Room List</a></li>-->
+										  </ul>
+										
+									 </li>
+									<% }%>
+									<li><a href="#"><i class="fa fa-list-alt"></i>  <span>Close Cashier</span> <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>
+										 <ul>
+											<li><a href="<%= ResolveUrl("Module/settledeposit.aspx") %>">Settle Payment/Deposit</a></li>
+											<li><a onclick="<%= this.ClosingShiftURL("") %>">Closing</a></li>
+										  </ul>
+									 </li>
+									<li><a href="#"><i class="fa fa-bolt"></i>  <span>Tools</span> <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>
+										 <ul>
+											 <% if(session.Usergroupid == "admin") {  %>
+											<li><a href="<%= ResolveUrl("Tools/batchroom.aspx") %>">Batch Room</a></li>
+											<li><a href="<%= ResolveUrl("Tools/synchtoax.aspx") %>">Export to Axapta</a></li>
+											 <% }%>
+											<li><a href="<%= ResolveUrl("Tools/manualroom.aspx") %>">Manual ON/OFF</a></li>
+											<li><a href="<%= ResolveUrl("Module/hotspotwifi.aspx") %>">Hotspot Wifi</a></li>
+										  </ul>
+									 </li>
+
+								     <li><a href="<%= ResolveUrl("Module/tutorial.aspx") %>"><i class="fa fa-question-circle-o"></i> <span>Tutorial</span><div class="clearfix"></div></a></li>
+
+
+								  </ul>
+								</div>
+							  </div>
+							  <div class="clearfix"></div>		
+
+
+							</div>
+    </form>
+							<script>
+							var toggle = true;
+										
+							$(".sidebar-icon").click(function() {                
+							  if (toggle)
+							  {
+								$(".page-container").addClass("sidebar-collapsed").removeClass("sidebar-collapsed-back");
+								$("#menu span").css({"position":"absolute"});
+							  }
+							  else
+							  {
+								$(".page-container").removeClass("sidebar-collapsed").addClass("sidebar-collapsed-back");
+								setTimeout(function() {
+								  $("#menu span").css({"position":"relative"});
+								}, 400);
+							  }
+											
+											toggle = !toggle;
+										});
+                            </script>
+<script src="<%= ResolveUrl("js/jquery.nicescroll.js") %>"></script>
+<script src="<%= ResolveUrl("js/scripts.js") %>"></script>
+<script src="<%= ResolveUrl("js/bootstrap.min.js") %>"></script>
+
+</body>
+</html>
